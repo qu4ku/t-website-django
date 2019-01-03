@@ -1,3 +1,17 @@
 from django.contrib import admin
+from .models import Post, Tag
 
-# Register your models here.
+
+class PostAdmin(admin.ModelAdmin):
+
+	class Meta:
+		model = Post
+
+	list_display = ['title', 'is_active']
+	list_editable = ['is_active']
+	list_filter = ['is_active', 'tags']
+	search_fields = ['title', 'content']
+
+
+admin.site.register(Post, PostAdmin)
+admin.site.register(Tag)

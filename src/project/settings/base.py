@@ -15,6 +15,8 @@ INSTALLED_APPS = [
     'core',
     'django_extensions',
     'django.contrib.sitemaps',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -86,8 +88,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
+# /media/uploads/image.jpg
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
 LOGIN_REDIRECT_URL = '/'
 
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'static'),
 ]
+

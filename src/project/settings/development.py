@@ -33,6 +33,9 @@ DEBUG_TOOLBAR_CONFIG = {
 	'INTERCEPT_REDIRECTS': False,
 }
 
+
+STATIC_ROOT = '/Users/kamilwroniewicz/_wrk/181212-personal-trainer/code/personal-trainer-django/dev_static'
+
 try:
 	from .local import *
 	print('Local settings imported.')
