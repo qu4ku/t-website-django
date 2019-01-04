@@ -7,7 +7,7 @@ class PostAdmin(admin.ModelAdmin):
 	class Meta:
 		model = Post
 
-	list_display = ['title', 'is_active']
+	list_display = ['title', 'status', 'is_active']
 	list_editable = ['is_active']
 	list_filter = ['is_active', 'tags']
 	search_fields = ['title', 'content']

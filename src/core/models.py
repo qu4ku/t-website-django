@@ -23,7 +23,6 @@ class Tag(models.Model):
 		ordering = ('title',)
 
 	title = models.CharField(max_length=100, blank=True)
-	# slug = models.SlugField(unique=True, default=slugify(unidecode(self.title)))
 	slug = models.SlugField(unique=True)
 	description = models.TextField(null=True, blank=True)
 	is_active = models.BooleanField(default=True)
@@ -56,27 +55,30 @@ class Post(models.Model):
 		get_latest_by = 'date'
 
 	is_active = models.BooleanField(default=True)
+	is_featured = models.BooleanField(default=False)
 	status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
-	publish = models.DateTimeField()
+	publish = models.DateTimeField(default=default_start_time)
 	title = models.CharField(max_length=280)
-	# slug = models.SlugField(unique=True, default=slugify(unidecode(title)))
-	slug = models.SlugField(unique=True)
+	slug = models.SlugField(unique=True, blank=True, default='')
 	content = RichTextField()
-	post_image = models.ImageField(upload_to='post_images/', blank=True, null=True)
-	post_thumb = models.ImageField(upload_to='post_thumbs/', blank=True, null=True)
 	description = models.TextField(null=True, blank=True)
 
-
+	post_image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+	post_thumb = models.ImageField(upload_to='post_thumbs/', blank=True, null=True)
+	post_image_alt = models.CharField(max_length=280, null=True, blank=True)
 
 	author = models.ForeignKey(User, blank=True, null=True, on_delete='SET_DEFAULT')
-
 	
-
-
 	tags = models.ManyToManyField(Tag, blank=True)
 
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
+
+	def save(self):
+		if not self.slug:
+			self.slug = slugify(unidecode(self.title))
+		super(Post, self).save()
+		
 
 	def __str__(self):
 		return self.title

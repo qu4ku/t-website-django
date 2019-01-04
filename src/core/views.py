@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.db.models import Q
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import Post
 
 def home_view(request):
@@ -38,3 +39,21 @@ def blog_view(request):
 	}
 
 	return render(request, template, context)
+
+
+def post_view(request, slug):
+	
+	post = get_object_or_404(Post, slug=slug, is_active=True)
+	
+	template = 'blog-post.html'
+	context = {'post': post}
+
+	return render(request, template, context)
+
+
+
+
+
+
+
+

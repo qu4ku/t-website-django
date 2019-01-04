@@ -1,8 +1,63 @@
-<h1>Blog</h1>
 
-{% for post in posts %}
-	<h1>{{ post.title }}</h1>
-	<img src="{{ post.image.url }}" alt="">
-	<p>{{ post.content|safe }}</p>
 
-{% endfor %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pl">
+
+
+<head>
+	<title>Blog - Trener Indywidualny Online - indywidualne plany dietetyczne i plany treningowe. Indywidualne rozpiski diety i treningów.</title>
+	
+	{% include 'includes/head.html' %}
+
+</head>
+
+<body>
+
+<div class="wrapper">
+	<header class="top--blog">
+		<a class="top__logo" href="http://www.trenerindywidualnyonline.pl">
+			<img src="{% static 'img/logo-big.png' %}" alt="Trener Indywidualny Online logo">
+		</a>
+		<a class="top__logo-mobile" href="http://www.trenerindywidualnyonline.pl">
+			<img src="{% static 'img/logo-small.png' %}" alt="Trener Indywidualny Online logo">
+		</a>
+		
+		<div class="top__menu">
+			<ul>
+				<li><a href="#benefits">Zalety</a></li>
+				<li><a href="#price">Cennik</a></li>
+				<li><a href="#how">Jak To Działa?</a></li>
+				<li><a href="#contact">Zamów</a></li>
+				{% if blog %}<li><a href="{% url 'blog' %}">Blog</a></li>{% endif %}
+			</ul>
+		</div>
+
+		
+	</header>
+
+	<div class="content">
+		<div class="blog-container">
+			<h1 class="blog-title">Blog</h1>
+			<div class="blog-posts">
+				{% for post in posts %}
+					<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2></a>
+					{% if post.image %}<img class="blog-post-image" src="{{ post.image.url }}" alt="">{% endif %}
+					<p class="blog-post-description">{{ post.description }}</p>
+
+				{% endfor %}
+			</div>
+		</div>
+
+
+		{% include 'includes/footer.html' %}
+
+	</div>
+
+
+	
+</body>
+</html>

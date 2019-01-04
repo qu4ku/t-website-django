@@ -631,4 +631,49 @@ select {
 	float: right;
 }
 
+.top--blog {
+	height: 180px;
+	grid-area: top;
+	background-image: url('../img/hero-image.jpg');
+	background-size: cover;
+}
 
+.content--blog {
+	max-width: 1200px;
+	background: red;
+}
+
+.blog-container {
+	display: grid;
+	grid-template-columns: minmax(50px, auto) minmax(500px, 1200px) minmax(50px, auto);
+	grid-template-rows: auto;
+}
+
+.blog-title {
+	font-size: 55px;
+	margin-top: 50px;
+	grid-column: 2;
+}
+
+.blog-posts {
+	grid-column: 2;
+}
+
+
+.blog-post-title {
+	font-size: 50px;
+	line-height: 58px;
+	color: black;
+	margin-top: 50px;
+}
+
+.blog-post-image {
+	height: 300px;
+}
+
+.blog-post-description {
+	/*color: white;*/
+	font-size: 16px;
+	line-height: 28px;
+	padding: 20px 50px 20px 50px;
+}

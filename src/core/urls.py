@@ -10,6 +10,6 @@ urlpatterns = [
 	# path('tags/', views.tags_list_view, name='tags_list'),
 	# path('other-tags/', views.other_tags_list_view, name='other_tags_list'),
 	# path('tag/<slug:slug>/', views.tag_view, name='tag'),
-	# path('post/<slug:slug>/', views.post_detail_view, name='post_detail'),
+	path('post/<slug:slug>/', views.post_view, name='post'),
 	# path('results/', views.search_view, name='search')
 ]
