@@ -6,6 +6,10 @@
 	--highlight: #ffd200;
 	/*--highlight: #21bbdc;*/
 	--text-light: #8b8b8b;
+	--text-highlight: #faecb5;
+	/*--text-highlight: #a5f1d1;*/
+	/*--text-highlight: #ffd200;*/
+	
 }
 
 /*------------------ RESET CSS ------------------*/
@@ -676,4 +680,10 @@ select {
 	font-size: 16px;
 	line-height: 28px;
 	padding: 20px 50px 20px 50px;
+}
+
+
+.text-highlight {
+	background: var(--text-highlight);
+	color: black;
 }
