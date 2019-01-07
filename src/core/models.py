@@ -5,6 +5,9 @@ from django.utils import timezone
 from django.utils.text import slugify
 from unidecode import unidecode
 
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+
 
 # Not used.
 def default_start_time():
@@ -39,6 +42,9 @@ class Tag(models.Model):
 
 
 
+
+
+
 class Post(models.Model):
 	""" Post model."""
 
@@ -59,7 +65,7 @@ class Post(models.Model):
 	status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
 	publish = models.DateTimeField(default=default_start_time)
 	title = models.CharField(max_length=280)
-	slug = models.SlugField(unique=True, blank=True, default='')
+	slug = models.SlugField(max_length=280, unique=True, blank=True, default='')
 	content = RichTextField()
 	description = models.TextField(null=True, blank=True)
 
@@ -74,14 +80,28 @@ class Post(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
-	def save(self):
+
+	def save(self, *args, **kwargs):
 		if not self.slug:
-			self.slug = slugify(unidecode(self.title))
-		super(Post, self).save()
-		
+			base_slug = slugify(unidecode(self.title))
+			new_slug = base_slug
+			counter = 0
+			while Post.objects.filter(slug=new_slug).exists():
+				counter += 1
+				new_slug = '{}-cp-{}'.format(base_slug, str(counter))
+				print(new_slug)
+
+			self.slug = new_slug
+
+
+		super(Post, self).save(*args, **kwargs)
+
+
 
 	def __str__(self):
 		return self.title
 
 	def get_absolute_url(self):
 		return '/post/{}/'.format(self.slug)
+
+
