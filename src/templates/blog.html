@@ -44,10 +44,16 @@
 			<h1 class="blog-title">Blog</h1>
 			<div class="blog-posts">
 				{% for post in posts %}
-					<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2></a>
-					{% if post.image %}<img class="blog-post-image" src="{{ post.image.url }}" alt="">{% endif %}
-					<p class="blog-post-description">{{ post.description }}</p>
-
+					<div class="blog-post-data">
+						<div class="blog-post-date">{{ post.publish|date:"d M, Y" }}</div>
+						<div class="blog-post-data-social">Social</div>
+						<div class="blog-post-data-line"></div>
+					</div>
+					<div class="blog-post-content">
+						<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2></a>
+						{% if post.image %}<img class="blog-post-image" src="{{ post.image.url }}" alt="">{% endif %}
+						<p class="blog-post-description">{{ post.description }}</p>
+					</div>
 				{% endfor %}
 			</div>
 		</div>

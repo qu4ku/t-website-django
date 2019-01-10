@@ -9,7 +9,7 @@
 	--text-highlight: #faecb5;
 	/*--text-highlight: #a5f1d1;*/
 	/*--text-highlight: #ffd200;*/
-	
+
 }
 
 /*------------------ RESET CSS ------------------*/
@@ -661,12 +661,46 @@ select {
 
 .blog-posts {
 	grid-column: 2;
+	display: grid;
+	grid-template-columns: 1fr 800px;
+	grid-template-rows: auto;
+
+}
+
+.blog-post-data {
+	grid-column: 1;
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	grid-template-rows: auto;
+	margin-top: 30px;
+
+	font-size: 16px;
+	color: black;
+}
+
+
+
+.blog-post-data-line {
+	height: 1px;
+	background-color: var(--text-light);
+
+	grid-column: 2;
+	grid-row: 1;
+	margin: 10px 40px 0 40px;
+}
+
+.blog-post-data-social {
+	grid-row: 2;
+}
+
+.blog-post-content {
+	grid-column: 2;
 }
 
 
 .blog-post-title {
-	font-size: 50px;
-	line-height: 58px;
+	font-size: 70px;
+	line-height: 80px;
 	color: black;
 	margin-top: 50px;
 }
@@ -676,11 +710,12 @@ select {
 }
 
 .blog-post-description {
-	/*color: white;*/
 	font-size: 16px;
 	line-height: 28px;
-	padding: 20px 50px 20px 50px;
+	padding: 20px 50px 50px 0px;
 }
+
+
 
 
 .text-highlight {

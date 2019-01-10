@@ -16,6 +16,15 @@ def default_start_time():
 	return start
 
 
+class PublicManager(models.Manager):
+	"""
+	Returns published posts that are not in the future.
+	"""
+
+	def get_queryset(self):
+		return super(PublicManager, self).get_queryset().filter(status='public', publish__lte=timezone.now())
+
+
 class Tag(models.Model):
 	"""Tag model. Many to many."""
 
@@ -42,9 +51,6 @@ class Tag(models.Model):
 
 
 
-
-
-
 class Post(models.Model):
 	""" Post model."""
 
@@ -59,6 +65,9 @@ class Post(models.Model):
 		db_table = 'post'
 		ordering = ('-publish',)
 		get_latest_by = 'date'
+
+	objects = models.Manager()
+	published = PublicManager()
 
 	is_active = models.BooleanField(default=True)
 	is_featured = models.BooleanField(default=False)
@@ -93,6 +102,9 @@ class Post(models.Model):
 
 			self.slug = new_slug
 
+		print(self.publish)
+		print(type(self.publish))
+		print(self.publish.second)
 
 		super(Post, self).save(*args, **kwargs)
 

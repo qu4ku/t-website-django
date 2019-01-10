@@ -17,14 +17,14 @@ def home_view(request):
 def blog_view(request):
 	query = request.GET.get('q')
 	if query:
-		post_list = Post.objects.filter(
+		post_list = Post.published.filter(
 			Q(title__icontains=query) |
 			Q(content__contains=query) | 
 			Q(description__contains=query) |
 			Q(author__contains=query)
 		).distinct().filter(is_active=True)
 	else:
-		post_list = Post.objects.filter(is_active=True)
+		post_list = Post.published.filter(is_active=True)
 
 	paginator = Paginator(post_list, 9)
 	page = request.GET.get('page')
