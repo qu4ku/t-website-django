@@ -33,6 +33,18 @@
 
 	<div class="content">
 		<div class="blog-container">
+			<div class="blog-newsletter-container">
+				<form class="blog-newsletter" action="https://formspree.io/trenerindywidualnyonline@gmail.com" method="POST">
+					<p>Zapisz się do Newslettera - bądź na bierząco.</p>
+
+					<input type="text" id="email_newsletter" name="email_newsletter" placeholder="E-mail" required>
+					
+
+					<!-- <p form-bottom">*Pola wymagane</p> -->
+					<input class="button-blog-newsletter" type="submit" value="Subskrybuj">
+					
+				</form>
+			</div>
 			<h1 class="blog-title">Blog</h1>
 			<div class="blog-posts">
 				{% for post in posts %}

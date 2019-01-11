@@ -481,7 +481,7 @@ svg, svg * {
 	line-height: 26px;
 	display: flex;
 	align-items: center;
-	padding-left: 20px;
+	padding-left: 20px;	
 }
 
 .th1 {
@@ -653,9 +653,76 @@ select {
 	grid-template-rows: auto;
 }
 
+.blog-newsletter-container {
+	display: grid;
+	grid-template-columns: 1fr 800px;
+	grid-column: 2;
+}
+
+.blog-newsletter {
+	height: 100px;
+	background-color: var(--secondary-light);
+	grid-column: 2;
+
+	display: grid;
+	grid-template-columns: auto auto auto;
+
+
+}
+
+
+
+.blog-newsletter p {
+	/*background: yellow;*/
+	/*height: 16px;*/
+	margin: auto 40px;
+
+	color: #94a4e7;
+	line-height: 22px;
+	font-weight: normal;
+	/*text-align: center;*/
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.blog-newsletter input[type=text] {
+	display: block;
+	border: none;
+	height: unset;
+	font-size: 16px;
+	padding-left: unset;
+	
+	background: none;
+	color: white;
+}
+
+input[type=text]::placeholder {
+	color: #94a4e7;
+
+}
+
+
+
+input[type=text]::selection {
+	color: white;
+	background: red;
+}
+
+.button-blog-newsletter {
+	font-size: 16px;
+	text-decoration: underline;
+	border: none;
+	background: none;
+	color: white;
+	font-weight: bold;
+	width: unset;
+	padding: 0;
+	margin-right:20px;
+
+}
+
 .blog-title {
 	font-size: 70px;
-	margin-top: 50px;
 	grid-column: 2;
 	color: black;
 }
@@ -726,7 +793,7 @@ select {
 	margin: auto;
 	text-align: center;
 	grid-column: 2;
-	grid-row: 3;
+	/*grid-row: 3;*/
 
 }
 
