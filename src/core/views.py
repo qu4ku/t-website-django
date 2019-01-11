@@ -26,11 +26,9 @@ def blog_view(request):
 	else:
 		post_list = Post.published.filter(is_active=True)
 
-	paginator = Paginator(post_list, 9)
+	paginator = Paginator(post_list, 2)
 	page = request.GET.get('page')
 	posts = paginator.get_page(page)
-
-
 
 
 	template = 'blog.html'
