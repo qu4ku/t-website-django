@@ -34,6 +34,7 @@ def blog_view(request):
 	template = 'blog.html'
 	context = {
 		'posts': posts,
+		'blog': True,
 	}
 
 	return render(request, template, context)

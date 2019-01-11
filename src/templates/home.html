@@ -23,15 +23,7 @@
 			<img src="{% static 'img/logo-small.png' %}" alt="Trener Indywidualny Online logo">
 		</a>
 		
-		<div class="top__menu">
-			<ul>
-				<li><a href="#benefits">Zalety</a></li>
-				<li><a href="#price">Cennik</a></li>
-				<li><a href="#how">Jak To Działa?</a></li>
-				<li><a href="#contact">Zamów</a></li>
-				{% if blog %}<li><a href="{% url 'blog' %}">Blog</a></li>{% endif %}
-			</ul>
-		</div>
+		{% include 'includes/menu.html' %}
 
 		<div class="top__container">
 			<h1 class="top__container-slogan-main">Twój Trener Indywidualny - plany dietetyczne i treningowe.</h1>
@@ -43,7 +35,7 @@
 
 	<div class="content">
 
-		<div id="benefits" class="benefits">
+		<div id="zalety" class="benefits">
 
 			<div class="benefits-text-container">
 				<h2 class="benefits__title">Zalety Trenera Indywidualnego Online</h2>
@@ -88,7 +80,7 @@ Masz dostęp do eksperta klasy ogólnopolskiej niezależnie od miejsca, w który
 
 		</div>
 		
-		<div id="price" class="price">
+		<div id="cennik" class="price">
 			<div class="price-table">
 
 				<span class="price-th price-title">Cennik</span>
@@ -121,7 +113,7 @@ Masz dostęp do eksperta klasy ogólnopolskiej niezależnie od miejsca, w który
 			
 		</div>
 
-		<div id="price" class="price-mobile">
+		<div id="cennik" class="price-mobile">
 			<div class="price-mobile-table">
 				<span class="price-th price-title">Cennik</span>
 				<span class="price-th">Dieta + 
@@ -174,7 +166,7 @@ Masz dostęp do eksperta klasy ogólnopolskiej niezależnie od miejsca, w który
 			</div>
 		</div>
 
-		<div id="how" class="how">
+		<div id="jak" class="how">
 			<div class="how-text-container">
 				<h2 class="how__title">Jak to działa?</h2>
 				<h3 class="how__body">Nasz proces składa się z czterech prostych kroków.</h3>
@@ -213,7 +205,7 @@ Masz dostęp do eksperta klasy ogólnopolskiej niezależnie od miejsca, w który
 
 
 
-		<div id="contact" class="contact">
+		<div id="kontakt" class="contact">
 			<div class="contact-text-container">
 				<h3 class="contact__title">Kontakt</h2>
 				<h4 class="contact__body">Wypełnij formularz. Po sprawdzeniu dostępności ekspertów dostaniesz linka do płatności.</h3>

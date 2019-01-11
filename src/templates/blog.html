@@ -26,15 +26,7 @@
 			<img src="{% static 'img/logo-small.png' %}" alt="Trener Indywidualny Online logo">
 		</a>
 		
-		<div class="top__menu">
-			<ul>
-				<li><a href="#benefits">Zalety</a></li>
-				<li><a href="#price">Cennik</a></li>
-				<li><a href="#how">Jak To Działa?</a></li>
-				<li><a href="#contact">Zamów</a></li>
-				{% if blog %}<li><a href="{% url 'blog' %}">Blog</a></li>{% endif %}
-			</ul>
-		</div>
+		{% include 'includes/menu.html' %}
 
 		
 	</header>
