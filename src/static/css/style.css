@@ -692,6 +692,10 @@ select {
 }
 
 .blog-post-data-social {
+	margin-top: 5px;
+}
+
+.blog-post-data-social {
 	grid-row: 2;
 }
 

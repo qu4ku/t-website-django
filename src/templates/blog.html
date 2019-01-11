@@ -46,7 +46,7 @@
 				{% for post in posts %}
 					<div class="blog-post-data">
 						<div class="blog-post-date">{{ post.publish|date:"d.m.Y" }}</div>
-						<div class="blog-post-data-social">Social</div>
+						<div class="blog-post-data-social">{% include 'includes/social.html' %}</div>
 						<div class="blog-post-data-line"></div>
 					</div>
 					<div class="blog-post-content">
@@ -57,7 +57,7 @@
 				{% endfor %}
 			</div>
 		{% include 'includes/pagination.html' %}
-			
+
 		</div>
 
 		{% include 'includes/footer.html' %}
