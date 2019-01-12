@@ -91,9 +91,12 @@ MEDIA_URL = '/media/'
 # CkEditor Upload path
 # /media/uploads/image.jpg
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
-CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
-# CKEDITOR_UPLOAD_PATH = "ckeditor"
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+# CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "ckeditor"
+# CKEDITOR_UPLOAD_PATH = "random"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+# CKEDITOR_UPLOAD_PATH = os.path.join(os.path.join(BASE_DIR, 'media'), "ckeditor")
 
 
 LOGIN_REDIRECT_URL = '/'

@@ -5,10 +5,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('my_admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}) # to be done
+	path('my_admin/', admin.site.urls),
+	path('', include('core.urls')),
+	path('ckeditor/', include('ckeditor_uploader.urls')),
+	# path('sitemap.xml', sitemap, {'sitemaps': sitemaps}) # to be done
 ]
 
 
@@ -18,3 +18,5 @@ if settings.DEBUG:
 	urlpatterns = [
 		path('__debug__/', include(debug_toolbar.urls)),
 	] + urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

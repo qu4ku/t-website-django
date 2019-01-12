@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Post, Tag
+from .forms import PostAdminForm
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -13,6 +14,8 @@ class PostAdmin(admin.ModelAdmin):
 	search_fields = ['title', 'content', 'description']
 
 	list_per_page = 30
+
+	form = PostAdminForm
 
 
 admin.site.register(Post, PostAdmin)

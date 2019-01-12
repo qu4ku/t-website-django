@@ -102,10 +102,6 @@ class Post(models.Model):
 
 			self.slug = new_slug
 
-		print(self.publish)
-		print(type(self.publish))
-		print(self.publish.second)
-
 		super(Post, self).save(*args, **kwargs)
 
 
@@ -114,6 +110,6 @@ class Post(models.Model):
 		return self.title
 
 	def get_absolute_url(self):
-		return '/post/{}/'.format(self.slug)
+		return '/blog/post/{}/'.format(self.slug)
 
 
