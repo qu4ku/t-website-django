@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('my_admin/', admin.site.urls),
     path('', include('core.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}) # to be done
 ]
 

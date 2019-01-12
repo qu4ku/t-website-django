@@ -696,7 +696,7 @@ select {
 	color: white;
 }
 
-input[type=text]::placeholder {
+.blog-newsletter input[type=text]::placeholder {
 	color: #94a4e7;
 
 }
@@ -794,6 +794,31 @@ input[type=text]::selection {
 	text-align: center;
 	grid-column: 2;
 	/*grid-row: 3;*/
+
+}
+
+
+.blog-post {
+	grid-column: 2;
+	display: grid;
+	grid-template-columns: 1fr 800px;
+	grid-template-rows: auto;
+}
+
+.blog-post h2 {
+	font-size: 40px;
+	line-height: 48px;
+	color: black;
+
+	margin-bottom: 40px;
+}
+
+.blog-post p {
+	margin-bottom: 40px;
+
+}
+
+.blog-post strong {
 
 }
 

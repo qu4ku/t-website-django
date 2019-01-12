@@ -1,2 +1,76 @@
 <h1>{{ post.title }}</h1>
-<div>{{ post.content|safe }}</div>
+
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pl">
+
+
+<head>
+	<title>Blog - Trener Indywidualny Online - indywidualne plany dietetyczne i plany treningowe. Indywidualne rozpiski diety i treningów.</title>
+	
+	{% include 'includes/head.html' %}
+
+</head>
+
+<body>
+
+<div class="wrapper">
+	<header class="top--blog">
+		<a class="top__logo" href="http://www.trenerindywidualnyonline.pl">
+			<img src="{% static 'img/logo-big.png' %}" alt="Trener Indywidualny Online logo">
+		</a>
+		<a class="top__logo-mobile" href="http://www.trenerindywidualnyonline.pl">
+			<img src="{% static 'img/logo-small.png' %}" alt="Trener Indywidualny Online logo">
+		</a>
+		
+		{% include 'includes/menu.html' %}
+
+		
+	</header>
+
+	<div class="content">
+		<div class="blog-container">
+			<div class="blog-newsletter-container">
+				<form class="blog-newsletter" action="https://formspree.io/trenerindywidualnyonline@gmail.com" method="POST">
+					<p>Zapisz się do Newslettera - bądź na bierząco.</p>
+
+					<input type="text" id="email_newsletter" name="email_newsletter" placeholder="E-mail" required>
+					
+
+					<!-- <p form-bottom">*Pola wymagane</p> -->
+					<input class="button-blog-newsletter" type="submit" value="Subskrybuj">
+					
+				</form>
+			</div>
+			<div class="blog-title">Blog</div>
+			<div class="blog-post">
+				
+					<div class="blog-post-data">
+						<div class="blog-post-date">{{ post.publish|date:"d.m.Y" }}</div>
+						<div class="blog-post-data-social">{% include 'includes/social.html' %}</div>
+						<div class="blog-post-data-line"></div>
+					</div>
+					<div class="blog-post-content">
+						<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h1>{{ post.title }}</h1></a>
+						{% if post.image %}<img class="blog-post-image" src="{{ post.image.url }}" alt="">{% endif %}
+
+						<p class="blog-post-description"><div>{{ post.content|safe }}</div>
+						</p>
+					</div>
+				
+			</div>
+		{% include 'includes/pagination.html' %}
+
+		</div>
+
+		{% include 'includes/footer.html' %}
+
+	</div>
+
+
+	
+</body>
+</html>
