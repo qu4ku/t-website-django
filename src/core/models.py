@@ -89,6 +89,8 @@ class Post(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
+	# read_time = models.CharField(max_length=6, null=True, blank=True)
+
 
 	def save(self, *args, **kwargs):
 		if not self.slug:
@@ -101,6 +103,7 @@ class Post(models.Model):
 				print(new_slug)
 
 			self.slug = new_slug
+
 
 		super(Post, self).save(*args, **kwargs)
 

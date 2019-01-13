@@ -810,12 +810,22 @@ input[type=text]::selection {
 	line-height: 48px;
 	color: black;
 
-	margin-bottom: 40px;
+	/*margin-bottom: 40px;*/
 }
 
 .blog-post p {
 	margin-bottom: 40px;
+}
 
+
+
+.text-link {
+	color: black;
+}
+
+.text-link:hover {
+	color: var(--secondary-light);
+	text-decoration: underline;
 }
 
 .blog-post strong {
