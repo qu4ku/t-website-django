@@ -810,14 +810,22 @@ input[type=text]::selection {
 	line-height: 48px;
 	color: black;
 
-	/*margin-bottom: 40px;*/
+	margin: 30px 0 20px 0;
 }
 
 .blog-post p {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
+.blog-post strong {
+	color: black;
+}
 
+.button-post {
+	margin: auto;
+	text-align: center;
+	grid-column: 2;
+}
 
 .text-link {
 	color: black;
@@ -828,9 +836,6 @@ input[type=text]::selection {
 	text-decoration: underline;
 }
 
-.blog-post strong {
-
-}
 
 .button-pagination {
 	margin: 0 3px;
