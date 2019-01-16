@@ -6,9 +6,8 @@ from .models import Post
 
 def home_view(request):
 	template = 'home.html'
-	is_blog = True
 	context = {
-		'blog': is_blog,
+		'blog': True,
 	}
 
 	return render(request, template, context)
@@ -26,7 +25,7 @@ def blog_view(request):
 	else:
 		post_list = Post.published.filter(is_active=True)
 
-	paginator = Paginator(post_list, 2)
+	paginator = Paginator(post_list, 3)
 	page = request.GET.get('page')
 	posts = paginator.get_page(page)
 
@@ -45,7 +44,10 @@ def post_view(request, slug):
 	post = get_object_or_404(Post, slug=slug, is_active=True)
 	
 	template = 'blog-post.html'
-	context = {'post': post}
+	context = {
+		'post': post,
+		'blog': True,
+	}
 
 	return render(request, template, context)
 
