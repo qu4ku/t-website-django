@@ -12,7 +12,7 @@
 		</a>
 	{% endif %}
 
-	<span class="pagination-current"> Page <b>{{ posts.number }}</b> of {{ posts.paginator.num_pages }}.</span>
+	<span class="pagination-current"> Strona <b>{{ posts.number }}</b> z {{ posts.paginator.num_pages }}.</span>
 
 	{% if posts.has_next %}
 		<a 	href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"

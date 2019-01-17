@@ -795,7 +795,7 @@ input[type=text]::selection {
 }
 
 .blog-post-description {
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 28px;
 	padding: 20px 50px 50px 0px;
 }
