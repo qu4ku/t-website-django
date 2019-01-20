@@ -18,7 +18,7 @@
 <body>
 
 <div class="wrapper">
-	<header class="top--blog">
+	<header class="top--article">
 		<a class="top__logo" href="http://www.trenerindywidualnyonline.pl">
 			<img src="{% static 'img/logo-big.png' %}" alt="Trener Indywidualny Online logo">
 		</a>
@@ -32,32 +32,32 @@
 	</header>
 
 	<div class="content">
-		<div class="blog-container">
-			<div class="blog-newsletter-container">
-				<form class="blog-newsletter" action="https://formspree.io/trenerindywidualnyonline@gmail.com" method="POST">
+		<div class="article-container">
+			<div class="article-newsletter-container">
+				<form class="article-newsletter" action="https://formspree.io/trenerindywidualnyonline@gmail.com" method="POST">
 					<p>Zapisz się do Newslettera - bądź na bierząco.</p>
 
 					<input type="text" id="email_newsletter" name="email_newsletter" placeholder="E-mail" required>
 					
 
 					<!-- <p form-bottom">*Pola wymagane</p> -->
-					<input class="button-blog-newsletter" type="submit" value="Subskrybuj">
+					<input class="button-article-newsletter" type="submit" value="Subskrybuj">
 					
 				</form>
 			</div>
-			<div class="blog-title"><a class="text-link" href="{% url 'articles' %}">Artykuły</a></div>
-			<div class="blog-post">
+			<div class="article-title"><a class="text-link" href="{% url 'articles' %}">Artykuły</a></div>
+			<div class="article-post">
 				
-					<div class="blog-post-data">
-						<div class="blog-post-date">{{ post.publish|date:"d.m.Y" }}</div>
-						<div class="blog-post-data-social">{% include 'includes/social.html' %}</div>
-						<div class="blog-post-data-line"></div>
+					<div class="article-post-data">
+						<div class="article-post-date">{{ post.publish|date:"d.m.Y" }}</div>
+						<div class="article-post-data-social">{% include 'includes/social.html' %}</div>
+						<div class="article-post-data-line"></div>
 					</div>
-					<div class="blog-post-content">
-						<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h1>{{ post.title }}</h1></a>
-						{% if post.image %}<img class="blog-post-image" src="{{ post.image.url }}" alt="">{% endif %}
+					<div class="article-post-content">
+						<a class="article-post-title" href="{{ post.get_absolute_url }}"><h1>{{ post.title }}</h1></a>
+						{% if post.image %}<img class="article-post-image" src="{{ post.image.url }}" alt="">{% endif %}
 
-						<p class="blog-post-meat"><div>{{ post.content|safe }}</div>
+						<p class="article-post-meat"><div>{{ post.content|safe }}</div>
 						</p>
 					</div>
 			</div>

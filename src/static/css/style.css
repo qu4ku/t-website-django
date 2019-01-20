@@ -682,31 +682,31 @@ select {
 	float: right;
 }
 
-.top--blog {
+.top--article {
 	height: 180px;
 	grid-area: top;
 	background-image: url('../img/hero-image.jpg');
 	background-size: cover;
 }
 
-.content--blog {
+.content--article {
 	max-width: 1200px;
 	background: red;
 }
 
-.blog-container {
+.article-container {
 	display: grid;
 	grid-template-columns: minmax(50px, auto) minmax(500px, 1200px) minmax(50px, auto);
 	grid-template-rows: auto;
 }
 
-.blog-newsletter-container {
+.article-newsletter-container {
 	display: grid;
 	grid-template-columns: 1fr 800px;
 	grid-column: 2;
 }
 
-.blog-newsletter {
+.article-newsletter {
 	height: 100px;
 	background-color: var(--secondary-light);
 	grid-column: 2;
@@ -719,7 +719,7 @@ select {
 
 
 
-.blog-newsletter p {
+.article-newsletter p {
 	/*background: yellow;*/
 	/*height: 16px;*/
 	margin: auto 40px;
@@ -732,7 +732,7 @@ select {
 	vertical-align: middle;
 }
 
-.blog-newsletter input[type=text] {
+.article-newsletter input[type=text] {
 	display: block;
 	border: none;
 	height: unset;
@@ -743,7 +743,7 @@ select {
 	color: white;
 }
 
-.blog-newsletter input[type=text]::placeholder {
+.article-newsletter input[type=text]::placeholder {
 	color: #94a4e7;
 
 }
@@ -755,7 +755,7 @@ input[type=text]::selection {
 	background: red;
 }
 
-.button-blog-newsletter {
+.button-article-newsletter {
 	font-size: 16px;
 	text-decoration: underline;
 	border: none;
@@ -768,14 +768,14 @@ input[type=text]::selection {
 
 }
 
-.blog-title {
+.article-title {
 	font-size: 70px;
 	font-weight: bold;
 	grid-column: 2;
 	color: black;
 }
 
-.blog-posts {
+.article-posts {
 	grid-column: 2;
 	display: grid;
 	grid-template-columns: 1fr 800px;
@@ -783,7 +783,7 @@ input[type=text]::selection {
 
 }
 
-.blog-post-data {
+.article-post-data {
 	grid-column: 1;
 	display: grid;
 	grid-template-columns: 100px 1fr;
@@ -794,10 +794,10 @@ input[type=text]::selection {
 	color: black;
 }
 
-.blog-post-date {
+.article-post-date {
 }
 
-.blog-post-data-line {
+.article-post-data-line {
 	height: 1px;
 	background-color: var(--text-light);
 
@@ -806,20 +806,20 @@ input[type=text]::selection {
 	margin: 10px 40px 0 40px;
 }
 
-.blog-post-data-social {
+.article-post-data-social {
 	margin-top: 5px;
 }
 
-.blog-post-data-social {
+.article-post-data-social {
 	grid-row: 2;
 }
 
-.blog-post-content {
+.article-post-content {
 	grid-column: 2;
 }
 
 
-.blog-post-title {
+.article-post-title {
 	font-size: 70px;
 	font-weight: bold;
 	line-height: 80px;
@@ -827,11 +827,11 @@ input[type=text]::selection {
 	margin-top: 50px;
 }
 
-.blog-post-image {
+.article-post-image {
 	height: 300px;
 }
 
-.blog-post-description {
+.article-post-description {
 	font-size: 18px;
 	line-height: 28px;
 	padding: 20px 50px 50px 0px;
@@ -847,14 +847,14 @@ input[type=text]::selection {
 }
 
 
-.blog-post {
+.article-post {
 	grid-column: 2;
 	display: grid;
 	grid-template-columns: 1fr 800px;
 	grid-template-rows: auto;
 }
 
-.blog-post h2 {
+.article-post h2 {
 	font-size: 40px;
 	font-weight: bold;
 	line-height: 48px;
@@ -863,14 +863,14 @@ input[type=text]::selection {
 	margin: 40px 0 20px 0;
 }
 
-.blog-post p {
+.article-post p {
 	font-size: 18px;
 	font-weight: normal;
 	margin-bottom: 20px;
 	/*color: red;*/
 }
 
-.blog-post strong {
+.article-post strong {
 	font-size: 19px;
 	font-weight: bold;
 	color: black;
