@@ -7,13 +7,13 @@ from .models import Post
 def home_view(request):
 	template = 'home.html'
 	context = {
-		'blog': True,
+
 	}
 
 	return render(request, template, context)
 
 
-def blog_view(request):
+def articles_view(request):
 	query = request.GET.get('q')
 	if query:
 		post_list = Post.published.filter(
@@ -30,10 +30,10 @@ def blog_view(request):
 	posts = paginator.get_page(page)
 
 
-	template = 'blog.html'
+	template = 'articles.html'
 	context = {
 		'posts': posts,
-		'blog': True,
+
 	}
 
 	return render(request, template, context)
@@ -43,10 +43,10 @@ def post_view(request, slug):
 	
 	post = get_object_or_404(Post, slug=slug, is_active=True)
 	
-	template = 'blog-post.html'
+	template = 'post.html'
 	context = {
 		'post': post,
-		'blog': True,
+
 	}
 
 	return render(request, template, context)

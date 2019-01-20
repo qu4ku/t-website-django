@@ -1,3 +1,6 @@
+<h1>{{ post.title }}</h1>
+
+
 {% load static %}
 
 
@@ -6,7 +9,7 @@
 
 
 <head>
-	<title>Blog - Trener Indywidualny Online - indywidualne plany dietetyczne i plany treningowe. Indywidualne rozpiski diety i treningów.</title>
+	<title>{{ post.title }} - Trener Indywidualny Online</title>
 	
 	{% include 'includes/head.html' %}
 
@@ -42,22 +45,25 @@
 					
 				</form>
 			</div>
-			<h1 class="blog-title">Blog</h1>
-			<div class="blog-posts">
-				{% for post in posts %}
+			<div class="blog-title"><a class="text-link" href="{% url 'articles' %}">Artykuły</a></div>
+			<div class="blog-post">
+				
 					<div class="blog-post-data">
 						<div class="blog-post-date">{{ post.publish|date:"d.m.Y" }}</div>
 						<div class="blog-post-data-social">{% include 'includes/social.html' %}</div>
 						<div class="blog-post-data-line"></div>
 					</div>
 					<div class="blog-post-content">
-						<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h2 class="title-link">{{ post.title }}</h2></a>
+						<a class="blog-post-title" href="{{ post.get_absolute_url }}"><h1>{{ post.title }}</h1></a>
 						{% if post.image %}<img class="blog-post-image" src="{{ post.image.url }}" alt="">{% endif %}
-						<p class="blog-post-description">{{ post.description }}</p>
+
+						<p class="blog-post-meat"><div>{{ post.content|safe }}</div>
+						</p>
 					</div>
-				{% endfor %}
 			</div>
-		{% include 'includes/pagination.html' %}
+			
+			<!-- <div class="button-main button-post">Zobacz inne posty!</div>	 -->
+					
 
 		</div>
 

@@ -113,6 +113,6 @@ class Post(models.Model):
 		return self.title
 
 	def get_absolute_url(self):
-		return '/blog/post/{}/'.format(self.slug)
+		return '/artykuly/{}/'.format(self.slug)
 
 
