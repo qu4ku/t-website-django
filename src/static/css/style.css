@@ -745,9 +745,7 @@ select {
 
 .article-newsletter input[type=text]::placeholder {
 	color: #94a4e7;
-
 }
-
 
 
 input[type=text]::selection {
@@ -827,6 +825,7 @@ input[type=text]::selection {
 	margin-top: 50px;
 }
 
+
 .article-post-image {
 	height: 300px;
 }
@@ -842,10 +841,7 @@ input[type=text]::selection {
 	margin: auto;
 	text-align: center;
 	grid-column: 2;
-	/*grid-row: 3;*/
-
 }
-
 
 .article-post {
 	grid-column: 2;
@@ -854,7 +850,7 @@ input[type=text]::selection {
 	grid-template-rows: auto;
 }
 
-.article-post h2 {
+.article-post-content h2 {
 	font-size: 40px;
 	font-weight: bold;
 	line-height: 48px;
@@ -863,17 +859,21 @@ input[type=text]::selection {
 	margin: 40px 0 20px 0;
 }
 
-.article-post p {
+.article-post-content p {
 	font-size: 18px;
 	font-weight: normal;
 	margin-bottom: 20px;
-	/*color: red;*/
 }
 
-.article-post strong {
+.article-post-content strong {
 	font-size: 19px;
 	font-weight: bold;
 	color: black;
+}
+
+.article-post-content img {
+	width: 100%;
+	margin: 20px 0 50px 0;
 }
 
 .button-post {
@@ -904,12 +904,9 @@ input[type=text]::selection {
 
 .button-pagination:hover {
 	background: var(--secondary-light);
-	
 }
 
 .button-pagination {
-
-	
 
 }
 

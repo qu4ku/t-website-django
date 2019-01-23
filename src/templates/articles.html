@@ -50,8 +50,8 @@
 						<div class="article-post-data-social">{% include 'includes/social.html' %}</div>
 						<div class="article-post-data-line"></div>
 					</div>
-					<div class="article-post-content">
-						<a class="article-post-title" href="{{ post.get_absolute_url }}"><h2 class="title-link">{{ post.title }}</h2></a>
+					<div class="article-post-container">
+						<a class="article-post-title" href="{{ post.get_absolute_url }}"><h2 class="title-link articles-post-title">{{ post.title }}</h2></a>
 						{% if post.image %}<img class="article-post-image" src="{{ post.image.url }}" alt="">{% endif %}
 						<p class="article-post-description">{{ post.description }}</p>
 					</div>
