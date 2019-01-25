@@ -689,10 +689,10 @@ select {
 	background-size: cover;
 }
 
-.content--article {
+/*.content--article {
 	max-width: 1200px;
 	background: red;
-}
+}*/
 
 .article-container {
 	display: grid;
@@ -717,17 +717,11 @@ select {
 
 }
 
-
-
 .article-newsletter p {
-	/*background: yellow;*/
-	/*height: 16px;*/
 	margin: auto 40px;
-
 	color: #94a4e7;
 	line-height: 22px;
 	font-weight: normal;
-	/*text-align: center;*/
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -762,7 +756,7 @@ input[type=text]::selection {
 	font-weight: bold;
 	width: unset;
 	padding: 0;
-	margin-right:20px;
+	margin-right: 20px;
 
 }
 
