@@ -721,13 +721,17 @@ select {
 
 }
 
-.article-newsletter p {
+.article-newsletter-body {
 	margin: auto 40px;
 	color: #94a4e7;
 	line-height: 22px;
 	font-weight: normal;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.article-newsletter-body--mobile {
+	display: none;
 }
 
 .article-newsletter input[type=text] {
@@ -748,7 +752,6 @@ select {
 
 input[type=text]::selection {
 	color: white;
-	background: red;
 }
 
 .button-article-newsletter {
@@ -764,7 +767,7 @@ input[type=text]::selection {
 
 }
 
-.article-title {
+.article-header {
 	font-size: 70px;
 	font-weight: bold;
 	grid-column: 2;

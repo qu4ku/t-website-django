@@ -32,7 +32,8 @@
 		<div class="article-container">
 			<div class="article-newsletter-container">
 				<form class="article-newsletter" action="https://formspree.io/trenerindywidualnyonline@gmail.com" method="POST">
-					<p>Zapisz się do Newslettera - bądź na bierząco.</p>
+					<p class="article-newsletter-body">Zapisz się do Newslettera - bądź na bierząco.</p>
+					<!-- <p class="article-newsletter-body article-newsletter-body--mobile">Newsletter</p> -->
 
 					<input type="text" id="email_newsletter" name="email_newsletter" placeholder="E-mail" required>
 					
@@ -42,7 +43,7 @@
 					
 				</form>
 			</div>
-			<h1 class="article-title">Artykuły</h1>
+			<h1 class="article-header">Artykuły</h1>
 			<div class="article-posts">
 				{% for post in posts %}
 					<div class="article-post-data">
