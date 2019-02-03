@@ -768,7 +768,7 @@ input[type=text]::selection {
 }
 
 .article-header {
-	font-size: 70px;
+	font-size: 42px;
 	font-weight: bold;
 	grid-column: 2;
 	color: black;
@@ -887,11 +887,20 @@ input[type=text]::selection {
 	color: black;
 }
 
+.text-link-back {
+	font-size: 16px;
+	text-decoration: underline;
+}
+
 .text-link:hover {
 	color: var(--secondary-light);
 	text-decoration: underline;
 }
 
+.text-link-back {
+	font-size: 16px;
+	text-decoration: underline;
+}
 
 .button-pagination {
 	margin: 0 3px;
