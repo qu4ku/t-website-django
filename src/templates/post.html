@@ -57,8 +57,10 @@
 						<a class="article-post-title" href="{{ post.get_absolute_url }}"><h1>{{ post.title }}</h1></a>
 						{% if post.image %}<img class="article-post-image" src="{{ post.image.url }}" alt="">{% endif %}
 
-						<p class="article-post-meat"><div>{{ post.content|safe }}</div>
+						<p class="article-post-meat">
+							<div>{{ post.content|safe }}</div>
 						</p>
+						<a class="text-link text-link-post-bottom" href="{% url 'articles' %}">Zobacz wszystkie artykuły</a>
 					</div>
 			</div>
 			

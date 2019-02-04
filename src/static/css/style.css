@@ -877,6 +877,8 @@ input[type=text]::selection {
 	margin: 20px 0 50px 0;
 }
 
+
+
 .button-post {
 	margin: auto;
 	text-align: center;
@@ -900,6 +902,12 @@ input[type=text]::selection {
 .text-link-back {
 	font-size: 16px;
 	text-decoration: underline;
+}
+
+.text-link-post-bottom {
+	font-size: 18px;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 .button-pagination {
