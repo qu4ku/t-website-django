@@ -77,6 +77,8 @@ class Post(models.Model):
 	slug = models.SlugField(max_length=280, unique=True, blank=True, default='')
 	content = RichTextField()
 	description = models.TextField(null=True, blank=True)
+	seo_title = models.CharField(max_length=70, blank=True, null=True)
+	seo_description = models.CharField(max_length=160, blank=True, null=True)
 
 	post_image = models.ImageField(upload_to='post_images/', blank=True, null=True)
 	post_thumb = models.ImageField(upload_to='post_thumbs/', blank=True, null=True)

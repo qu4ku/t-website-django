@@ -6,7 +6,14 @@
 
 
 <head>
-	<title>{{ post.title }} - Trener Indywidualny Online</title>
+	<title>{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }}{% endif %} - Trener Indywidualny Online</title>
+	
+	<meta name="description" content="{% if post.seo_description %}{{ post.seo_description }}{% elif post.description %}{{ post.description }}{% else %}Trener Indywidualny Online to plany dietetyczne i treningowe, które pomagają schudnąć, zbudować masę mięśniową.{% endif %}" />
+	<meta name="twitter:title" content="{{ post.title }} - Trener Indywidualny Online">
+	<meta property="og:title" content="{% if post.seo_title %}{{ post.seo_title }} {% else %}{{ post.title }}{% endif %}" />
+	<meta property="og:description" content="{% if post.seo_description %}{{ post.seo_description }}{% elif post.description %}{{ post.description }}{% else %}Trener Indywidualny Online to plany dietetyczne i treningowe, które pomagają schudnąć, zbudować masę mięśniową.{% endif %}" />
+	<meta name="twitter:title" content="{% if post.seo_title %}{{ post.seo_title }}{% else %}{{ post.title }}{% endif %} - Trener Indywidualny Online" />
+	<meta name="twitter:description" content="Trener Indywidualny Online - plany dietetyczne i treningowe, które pomagają schudnąć, zbudować masę mięśniową." />
 	
 	{% include 'includes/head.html' %}
 
