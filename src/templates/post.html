@@ -51,7 +51,13 @@
 				</form>
 			</div>
 			<div class="article-header">
-				<a class="text-link text-link-back" href="{% url 'articles' %}">Zobacz wszystkie artykuły</a>
+				<a class="text-link text-link-back" href="{% url 'articles' %}">Wszystkie artykuły</a>
+				{% if prev_post %}
+				<a class="text-link text-link-back" href="{% url 'post' slug=prev_post.slug %}">Poprzedni</a>
+				{% endif %}
+				{% if next_post %}
+				<a class="text-link text-link-back" href="{% url 'post' slug=next_post.slug %}">Następny</a>
+				{% endif %}
 			</div>
 			<div class="article-post">
 				
