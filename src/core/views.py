@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Post
 
+
 def home_view(request):
 	template = 'home.html'
 	context = {
@@ -13,7 +14,7 @@ def home_view(request):
 
 
 def articles_view(request):
-	ARTICLES_PER_PAGE = 3
+	ARTICLES_PER_PAGE = 9
 
 	query = request.GET.get('q')
 	if query:
@@ -39,17 +40,15 @@ def articles_view(request):
 
 
 def post_view(request, slug):
-	posts = Post.published.filter(is_active=True)
 	post = get_object_or_404(Post, slug=slug, is_active=True)
 
-	idx = list(posts).index(post)
 	try:
-		prev_post = posts[idx - 1]
-	except IndexError:
+		prev_post = post.get_previous_by_publish(is_active=True)
+	except Post.DoesNotExist:
 		prev_post = None
 	try:
-		next_post = posts[idx + 1]
-	except IndexError:
+		next_post = post.get_next_by_publish(is_active=True)
+	except Post.DoesNotExist:
 		next_post = None
 
 	template = 'post.html'
@@ -60,11 +59,3 @@ def post_view(request, slug):
 	}
 
 	return render(request, template, context)
-
-
-
-
-
-
-
-
