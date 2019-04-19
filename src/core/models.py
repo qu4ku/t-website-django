@@ -50,7 +50,6 @@ class Tag(models.Model):
 		return '/tag/{}/'.format(self.slug)
 
 
-
 class Post(models.Model):
 	""" Post model."""
 
@@ -85,14 +84,13 @@ class Post(models.Model):
 	post_image_alt = models.CharField(max_length=280, null=True, blank=True)
 
 	author = models.ForeignKey(User, blank=True, null=True, on_delete='SET_DEFAULT')
-	
+
 	tags = models.ManyToManyField(Tag, blank=True)
 
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
 	# read_time = models.CharField(max_length=6, null=True, blank=True)
-
 
 	def save(self, *args, **kwargs):
 		if not self.slug:
@@ -106,15 +104,11 @@ class Post(models.Model):
 
 			self.slug = new_slug
 
-
 		super(Post, self).save(*args, **kwargs)
-
-
 
 	def __str__(self):
 		return self.title
 
 	def get_absolute_url(self):
 		return '/artykuly/{}/'.format(self.slug)
-
 
