@@ -357,6 +357,35 @@ select {
 	line-height: 28px;
 }
 
+/*------------------ CORRECTOR CSS ------------------*/
+
+.corrector-button {
+	position: relative;
+	background: #1b1d29;
+	color: white;
+	top: unset;
+	left: unset;
+	bottom: unset;
+	writing-mode: unset;
+	padding: 10px;
+	text-align: center
+}
+
+.corrector-form { 
+	width: unset;
+	margin: 100px auto auto auto;
+}
+
+.corrector-form input {
+	padding-left: 20px;
+}
+
+.corrector-close {
+	font-size: 40px;
+	right: 40px;
+	top: 15px;
+}
+
 
 
 } /*-- @media END */
@@ -380,6 +409,8 @@ select {
 
 
 } /*-- @media END */
+
+
 
 
 
