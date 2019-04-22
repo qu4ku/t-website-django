@@ -374,7 +374,6 @@ svg, svg * {
 }
 
 .benefits__benefit-c-img {
-	
 	background-image: url('../img/benefits-c.jpg');
 	background-size: cover;
 	min-height: 300px;
@@ -654,7 +653,6 @@ select {
   background-position: center right;
 }
 
-
 .footer {
 	display: grid;
 	grid-area: footer;
@@ -692,11 +690,6 @@ select {
 	background-image: url('../img/hero-image.jpg');
 	background-size: cover;
 }
-
-/*.content--article {
-	max-width: 1200px;
-	background: red;
-}*/
 
 .article-container {
 	display: grid;
@@ -748,7 +741,6 @@ select {
 .article-newsletter input[type=text]::placeholder {
 	color: #94a4e7;
 }
-
 
 input[type=text]::selection {
 	color: white;
@@ -946,6 +938,11 @@ input[type=text]::selection {
 	writing-mode: vertical-rl;
 }
 
+.corrector-button:hover {
+	color: red;
+	transition: 500ms;
+}
+
 .corrector-overlay {
 	position: fixed;
 	top: 0;
@@ -982,6 +979,7 @@ input[type=text]::selection {
 	right: 50px;
 	top: 50px;
 }
+
 
 
 

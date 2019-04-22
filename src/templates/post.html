@@ -77,9 +77,6 @@
 					</div>
 			</div>
 			
-			<!-- <div class="button-main button-post">Zobacz inne posty!</div>	 -->
-					
-
 		</div>
 
 		{% include 'includes/footer.html' %}
@@ -90,7 +87,7 @@
 	<a class="corrector-button" href="#corrector-overlay-on">Zgłoś błąd w tekście</a>
 	<div class="corrector-overlay" id="corrector-overlay-on">
 		<form class="corrector-form" action="https://formspree.io/trenerindywidualnyonline@gmail.com" method="POST">
-		<input name="mistake" value="Opisz błąd" type="text" autofocus class="search-input" autofocus placeholder="Start typing and press enter.">
+		<input name="mistake" placeholder="Opisz błąd" type="text" autofocus class="search-input" autofocus placeholder="Start typing and press enter.">
 		<input type="hidden" name="page" value="{{ post.title }}">
 		<input class="button-article-newsletter" type="submit" value="Wyślij">
 		</form>
