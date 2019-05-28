@@ -756,7 +756,6 @@ input[type=text]::selection {
 	width: unset;
 	padding: 0;
 	margin-right: 20px;
-
 }
 
 .article-header {
@@ -830,7 +829,6 @@ input[type=text]::selection {
 }
 
 .pagination {
-
 	margin: auto;
 	text-align: center;
 	grid-column: 2;
@@ -912,10 +910,6 @@ input[type=text]::selection {
 
 .button-pagination:hover {
 	background: var(--secondary-light);
-}
-
-.button-pagination {
-
 }
 
 
