@@ -20,3 +20,10 @@ DATABASES = {
 
 MEDIA_ROOT = '/var/www/trenerindywidualnyonline/media/'
 STATIC_ROOT = '/var/www/trenerindywidualnyonline/static/'
+
+
+# Conf for dropbox dbbackup
+DBBACKUP_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DBBACKUP_STORAGE_OPTIONS = {
+	'oauth2_access_token': os.environ.get('DB_AUTH'),
+}
