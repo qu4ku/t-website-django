@@ -83,7 +83,7 @@ class Post(models.Model):
 	post_thumb = models.ImageField(upload_to='post_thumbs/', blank=True, null=True)
 	post_image_alt = models.CharField(max_length=280, null=True, blank=True)
 
-	author = models.ForeignKey(User, blank=True, null=True, on_delete='SET_DEFAULT')
+	author = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
 
 	tags = models.ManyToManyField(Tag, blank=True)
 
